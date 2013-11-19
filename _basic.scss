@@ -1,11 +1,10 @@
 /*
-
 参考
 https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
-
 */
 
-/*.pos{position:;}*/
+
+@mixin pos($var){position: $var;}
 .pos-s{position:static;}
 .pos-a{position:absolute;}
 .pos-r{position:relative;}
@@ -18,9 +17,9 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .b-a{bottom:auto;}
 @mixin l($left){left: $left;}
 .l-a{left:auto;}
-/*.z{z-index:;}*/
+@mixin z($var){z-index:$var;}
 .z-a{z-index:auto;}
-/*.fl{float:;}*/
+@mixin fl($var){float:$var;}
 .fl-n{float:none;}
 .fl-l{float:left;}
 .fl-r{float:right;}
@@ -58,17 +57,17 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .ov-h{overflow:hidden;}
 .ov-s{overflow:scroll;}
 .ov-a{overflow:auto;}
-/*.ovx{overflow-x:;}*/
+@mixin ovx($var){overflow-x:$var;}
 .ovx-v{overflow-x:visible;}
 .ovx-h{overflow-x:hidden;}
 .ovx-s{overflow-x:scroll;}
 .ovx-a{overflow-x:auto;}
-/*.ovy{overflow-y:;}*/
+@mixin ovy($var){overflow-y:$var;}
 .ovy-v{overflow-y:visible;}
 .ovy-h{overflow-y:hidden;}
 .ovy-s{overflow-y:scroll;}
 .ovy-a{overflow-y:auto;}
-/*.ovs{overflow-style:;}*/
+@mixin ovs($var){overflow-style:$var;}
 .ovs-a{overflow-style:auto;}
 .ovs-s{overflow-style:scrollbar;}
 .ovs-p{overflow-style:panner;}
@@ -83,17 +82,17 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .bxz-bb{box-sizing:border-box;}
 @mixin bxsh($var){box-shadow: $var;}
 .bxsh-n{box-shadow:none;}
-.bxsh+{box-shadow:000#000;}
-/*.bxsh-w{-webkit-box-shadow:;}
-.bxsh-w+{-webkit-box-shadow:000#000;}
-.bxsh-m{-moz-box-shadow:;}
-.bxsh-m+{-moz-box-shadow:0000#000;}*/
+.bxsh_{box-shadow: 0 0 0 #000;}
+@mixin bxsh-w($var){-webkit-box-shadow:$var;}
+.bxsh-w_{-webkit-box-shadow: 0 0 0 #000;}
+@mixin bxsh-m($var){-moz-box-shadow: $var;}
+@mixin bxsh-m_($var){-moz-box-shadow: $var;}
 @mixin m($dist){margin: $dist;}
 .m-a{margin:auto;}
-.m-0{margin:0;}
-.m-2{margin:00;}
-.m-3{margin:000;}
-.m-4{margin:0000;}
+.m-0{margin: 0;}
+.m-2{margin: 0 0;}
+.m-3{margin: 0 0 0;}
+.m-4{margin: 0 0 0 0;}
 @mixin mt($top){margin-top: $top;}
 .mt-a{margin-top:auto;}
 @mixin mr($right){margin-right: $right;}
@@ -132,52 +131,53 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 @mixin mih($height){min-height: $height;}
 @mixin o($width){outline: $width;}
 .o-n{outline:none;}
-.o+{outline:1pxsolid#000;}
-/*.oo{outline-offset:;}
-.ow{outline-width:;}
-.os{outline-style:;}*/
+.o_{outline: 1px solid #000;}
+@mixin oo($var){outline-offset: $var;}
+@mixin ow($var){outline-width: $var;}
+@mixin os($var){outline-style: $var;}
 .oc{outline-color:#000;}
+@mixin oc($var){outline-color: $var;}
 .oc-i{outline-color:invert;}
 @mixin bd($dist){border: $dist;}
 .bd-n{border:none;}
-.bd+{border:1pxsolid#000;}
-/*.bdbk{border-break:;}*/
+.bd_{border:1px solid #000;}
+@mixin bdbk($var){border-break:$var;}
 .bdbk-c{border-break:close;}
-/*.bdcl{border-collapse:;}*/
+@mixin bdcl($var){border-collapse:$var;}
 .bdcl-c{border-collapse:collapse;}
 .bdcl-s{border-collapse:separate;}
 @mixin bdc($color){border-color: $color;}
 @mixin bdi($image){border-image: $image;}
 .bdi-n{border-image:none;}
-.bdi-+{border-image:url()0repeat;}
-/*.bdi-w{-webkit-border-image:;}*/
-/*.bdi-w+{-webkit-border-image:url()0repeat;}
-.bdi-m{-moz-border-image:;}
-.bdi-m+{-moz-border-image:url()0repeat;}
-.bdti{border-top-image:;}*/
+/*.bdi-+{border-image:url() 0 repeat;}*/
+@mixin bdi-w($var){-webkit-border-image:$var;}
+/*@mixin .bdi-w+{-webkit-border-image:url()0repeat;}*/
+@mixin bdi-m($var){-moz-border-image: $var;}
+/*.bdi-m+{-moz-border-image:url()0repeat;}*/
+@mixin bdti($var){border-top-image:$var;}
 .bdti-n{border-top-image:none;}
-/*.bdri{border-right-image:;}*/
+@mixin bdri($var){border-right-image:$var;}
 .bdri-n{border-right-image:none;}
-/*.bdbi{border-bottom-image:;}*/
+@mixin bdbi($var){border-bottom-image:$var;}
 .bdbi-n{border-bottom-image:none;}
-/*.bdli{border-left-image:;}*/
+@mixin bdli($var){border-left-image:$var;}
 .bdli-n{border-left-image:none;}
-/*.bdci{border-corner-image:;}*/
+@mixin bdci($var){border-corner-image:$var;}
 .bdci-n{border-corner-image:none;}
 .bdci-c{border-corner-image:continue;}
-/*.bdtli{border-top-left-image:;}*/
+@mixin bdtli($var){border-top-left-image:$var;}
 .bdtli-n{border-top-left-image:none;}
 .bdtli-c{border-top-left-image:continue;}
-/*.bdtri{border-top-right-image:;}*/
+@mixin bdtri($var){border-top-right-image:$var;}
 .bdtri-n{border-top-right-image:none;}
 .bdtri-c{border-top-right-image:continue;}
-/*.bdbri{border-bottom-right-image:;}*/
+@mixin bdbri($var){border-bottom-right-image:($var)}
 .bdbri-n{border-bottom-right-image:none;}
 .bdbri-c{border-bottom-right-image:continue;}
-/*.bdbli{border-bottom-left-image:;}*/
+@mixin bdbli($var){border-bottom-left-image:$var;}
 .bdbli-n{border-bottom-left-image:none;}
 .bdbli-c{border-bottom-left-image:continue;}
-/*.bdf{border-fit:;}*/
+@mixin bdf($var){border-fit:$var;}
 .bdf-c{border-fit:clip;}
 .bdf-r{border-fit:repeat;}
 .bdf-sc{border-fit:scale;}
@@ -185,10 +185,10 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .bdf-ow{border-fit:overwrite;}
 .bdf-of{border-fit:overflow;}
 .bdf-sp{border-fit:space;}
-/*.bdlt{border-length:;}*/
+@mixin bdlt($var){border-length: $var;}
 .bdlt-a{border-length:auto;}
-/*.bdsp{border-spacing:;}
-.bds{border-style:;}*/
+@mixin bdsp($var){border-spacing: $var;}
+@mixin bds{border-style: $var;}
 .bds-n{border-style:none;}
 .bds-h{border-style:hidden;}
 .bds-dt{border-style:dotted;}
@@ -206,8 +206,8 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 @mixin bdt($top){border-top: $top;}
 .bdt-n{border-top:none;}
 .bdt+{border-top: 1px solid #000;}
-/*.bdtw{border-top-width:;}
-.bdts{border-top-style:;}*/
+@mixin bdtw($var){border-top-width: $var;}
+@mixin bdts($var){border-top-style: $var;}
 .bdts-n{border-top-style:none;}
 .bdtc{border-top-color:#000;}
 @mixin bdr($var){border-right: $var;}
@@ -220,51 +220,51 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 @mixin bdb($var){border-bottom: $var;}
 .bdb-n{border-bottom:none;}
 .bdb+{border-bottom: 1px solid #000;}
-/*.bdbw{border-bottom-width:;}
-.bdbs{border-bottom-style:;}*/
+@mixin bdbw($var){border-bottom-width: $var;}
+@mixin bdbs($var){border-bottom-style: $var;}
 .bdbs-n{border-bottom-style:none;}
 .bdbc{border-bottom-color:#000;}
 @mixin bdl($var){border-left: $var;}
 .bdl-n{border-left:none;}
-.bdl+{border-left: 1px solid #000;}
-/*.bdlw{border-left-width:;}
-.bdls{border-left-style:;}*/
+.bdl_{border-left: 1px solid #000;}
+@mixin bdlw($var){border-left-width: $var;}
+@mixin bdls($var){border-left-style: $var;}
 .bdls-n{border-left-style:none;}
 .bdlc{border-left-color:#000;}
 @mixin bdrs($var){border-radius: $var;}
 @mixin bdrs-w($var){-webkit-border-radius: $var;}
-/*.bdrs-m{-moz-border-radius:;}
-.bdtrrs{border-top-right-radius:;}
-.bdtlrs{border-top-left-radius:;}
-.bdbrrs{border-bottom-right-radius:;}
-.bdblrs{border-bottom-left-radius:;}*/
-@mixin bg($dist){background: $dist;}
+@mixin bdrs-m($var){-moz-border-radius: $var;}
+@mixin bdtrrs($var){border-top-right-radius: $var;}
+@mixin bdtlrs($var){border-top-left-radius: $var;}
+@mixin bdbrrs($var){border-bottom-right-radius: $var;}
+@mixin bdblrs($var){border-bottom-left-radius:$var;}
+@mixin bg($var){background: $var;}
 .bg-n{background:none;}
 @mixin bgc($color){background-color: $color;}
 .bgc-t{background-color:transparent;}
-/*.bgi{background-image:url();}*/
+@mixin bgi($var){background-image:$var;}
 .bgi-n{background-image:none;}
-/*.bgr{background-repeat:;}*/
+@mixin bgr($var){background-repeat: $var;}
 .bgr-r{background-repeat:repeat;}
 .bgr-x{background-repeat:repeat-x;}
 .bgr-y{background-repeat:repeat-y;}
 .bgr-n{background-repeat:no-repeat;}
-/*.bga{background-attachment:;}*/
+@mixin bga($var){background-attachment:$var;}
 .bga-f{background-attachment:fixed;}
 .bga-s{background-attachment:scroll;}
 .bgp{background-position:00;}
-/*.bgpx{background-position-x:;}
-.bgpy{background-position-y:;}
-.bgbk{background-break:;}*/
+@mixin bgpx($var){background-position-x: $var;}
+@mixin bgpy($var){background-position-y: $var;}
+@mixin bgbk($var){background-break: $var;}
 .bgbk-bb{background-break:bounding-box;}
 .bgbk-eb{background-break:each-box;}
 .bgbk-c{background-break:continuous;}
-/*.bgcp{background-clip:;}*/
+@mixin bgcp($var){background-clip:$var;}
 .bgcp-bb{background-clip:border-box;}
 .bgcp-pb{background-clip:padding-box;}
 .bgcp-cb{background-clip:content-box;}
 .bgcp-nc{background-clip:no-clip;}
-/*.bgo{background-origin:;}*/
+@mixin bgo($var){background-origin: $var;}
 .bgo-pb{background-origin:padding-box;}
 .bgo-bb{background-origin:border-box;}
 .bgo-cb{background-origin:content-box;}
@@ -274,21 +274,21 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .bgz-cv{background-size:cover;}
 .c{color:#000;}
 @mixin c($color){color: $color;}
-/*.tbl{table-layout:;}*/
+@mixin tbl($var){table-layout: $var;}
 .tbl-a{table-layout:auto;}
 .tbl-f{table-layout:fixed;}
-/*.cps{caption-side:;}*/
+@mixin cps($var){caption-side: $var;}
 .cps-t{caption-side:top;}
 .cps-b{caption-side:bottom;}
-/*.ec{empty-cells:;}*/
+@mixin ec($var){empty-cells: $var;}
 .ec-s{empty-cells:show;}
 .ec-h{empty-cells:hide;}
-/*.lis{list-style:;}*/
+@mixin lis($var){list-style: $var;}
 .lis-n{list-style:none;}
-/*.lisp{list-style-position:;}*/
+@mixin lisp($var){list-style-position: $var;}
 .lisp-i{list-style-position:inside;}
 .lisp-o{list-style-position:outside;}
-/*.list{list-style-type:;}*/
+@mixin list($var){list-style-type: $var;}
 .list-n{list-style-type:none;}
 .list-d{list-style-type:disc;}
 .list-c{list-style-type:circle;}
@@ -297,26 +297,25 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .list-dclz{list-style-type:decimal-leading-zero;}
 .list-lr{list-style-type:lower-roman;}
 .list-ur{list-style-type:upper-roman;}
-/*.lisi{list-style-image:;}*/
+@mixin lisi($var){list-style-image: $var;}
 .lisi-n{list-style-image:none;}
-/*.q{quotes:;}*/
+@mixin q($var){quotes: $var;}
 .q-n{quotes:none;}
 .q-ru{quotes:'\00AB''\00BB''\201E''\201C';}
 .q-en{quotes:'\201C''\201D''\2018''\2019';}
-/*.ct{content:;}*/
+@mixin ct($var){content: $var;}
 .ct-n{content:normal;}
 .ct-oq{content:open-quote;}
 .ct-noq{content:no-open-quote;}
 .ct-cq{content:close-quote;}
 .ct-ncq{content:no-close-quote;}
-/*
-.ct-a{content:attr();}
-.ct-c{content:counter();}
-.ct-cs{content:counters();}
-.coi{counter-increment:;}
-.cor{counter-reset:;}
-.va{vertical-align:;}
-*/
+@mixin ct-a($var){content: attr($var);}
+@mixin ct-c($var){content: counter($var);}
+@mixin ct-cs($var){content: counters($var);}
+@mixin coi($var){counter-increment:$var;}
+@mixin cor($var){counter-reset:$var;}
+@mixin va($var){vertical-align:$var;}
+
 .va-sup{vertical-align:super;}
 .va-t{vertical-align:top;}
 .va-tt{vertical-align:text-top;}
@@ -330,7 +329,7 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .ta-c{text-align:center;}
 .ta-r{text-align:right;}
 .ta-j{text-align:justify;}
-/*.tal{text-align-last:;}*/
+@mixin tal($var){text-align-last: $var;}
 .tal-a{text-align-last:auto;}
 .tal-l{text-align-last:left;}
 .tal-c{text-align-last:center;}
@@ -340,7 +339,7 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .td-o{text-decoration:overline;}
 .td-l{text-decoration:line-through;}
 .td-u{text-decoration:underline;}
-/*.te{text-emphasis:;}*/
+@mixin te($var){text-emphasis: $var;}
 .te-n{text-emphasis:none;}
 .te-ac{text-emphasis:accent;}
 .te-dt{text-emphasis:dot;}
@@ -348,7 +347,7 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .te-ds{text-emphasis:disc;}
 .te-b{text-emphasis:before;}
 .te-a{text-emphasis:after;}
-/*.th{text-height:;}*/
+@mixin th($height){text-height: $height;}
 .th-a{text-height:auto;}
 .th-f{text-height:font-size;}
 .th-t{text-height:text-size;}
@@ -363,28 +362,24 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .tj-d{text-justify:distribute;}
 .tj-k{text-justify:kashida;}
 .tj-t{text-justify:tibetan;}
-/*.to{text-outline:;}*/
+@mixin to($var){text-outline: $var;}
 .to-n{text-outline:none;}
-/*
-.to+{text-outline: 00 #0 00;}
-.tr{text-replace:;}
-*/
+.to_{text-outline: 0 0 #000;}
+@mixin tr($var){text-replace: $var;}
 .tr-n{text-replace:none;}
-/*.tt{text-transform:;}*/
+@mixin tt($var){text-transform: $var;}
 .tt-n{text-transform:none;}
 .tt-u{text-transform:uppercase;}
 .tt-c{text-transform:capitalize;}
 .tt-l{text-transform:lowercase;}
-/*.tw{text-wrap:;}*/
+@mixin tw($var){text-wrap: $var;}
 .tw-n{text-wrap:normal;}
 .tw-no{text-wrap:none;}
 .tw-u{text-wrap:unrestricted;}
 .tw-s{text-wrap:suppress;}
-/*.tsh{text-shadow:;}*/
+@mixin tsh($var){text-shadow: $var;}
 .tsh-n{text-shadow:none;}
-/*
-.tsh+{text-shadow:000#000;}
-*/
+.tsh_{text-shadow: 0 0 0 #000;}
 @mixin lh($height){line-height: $height;}
 @mixin whs($var){white-space: $var;}
 .whs-n{white-space:normal;}
@@ -392,26 +387,26 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .whs-nw{white-space:nowrap;}
 .whs-pw{white-space:pre-wrap;}
 .whs-pl{white-space:pre-line;}
-/*.whsc{white-space-collapse:;}*/
+@mixin whsc($var){white-space-collapse: $var;}
 .whsc-n{white-space-collapse:normal;}
 .whsc-k{white-space-collapse:keep-all;}
 .whsc-l{white-space-collapse:loose;}
 .whsc-bs{white-space-collapse:break-strict;}
 .whsc-ba{white-space-collapse:break-all;}
-/*.wob{word-break:;}*/
+@mixin wob($var){word-break: $var;}
 .wob-n{word-break:normal;}
 .wob-k{word-break:keep-all;}
 .wob-l{word-break:loose;}
 .wob-bs{word-break:break-strict;}
 .wob-ba{word-break:break-all;}
-/*.wos{word-spacing:;}
-.wow{word-wrap:;}*/
+@mixin wos($var){word-spacing: $var;}
+@mixin wow($var){word-wrap: $var;}
 .wow-n{word-wrap:normal;}
 .wow-no{word-wrap:none;}
 .wow-u{word-wrap:unrestricted;}
 .wow-s{word-wrap:suppress;}
-/*.lts{letter-spacing:;}
-.f{font:;}*/
+@mixin lts($var){letter-spacing: $var;}
+@mixin f($var){font: $var;}
 @mixin fw($dist){font-weight: $dist;}
 .fw-n{font-weight:normal;}
 .fw-b{font-weight:bold;}
@@ -421,33 +416,33 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .fs-n{font-style:normal;}
 .fs-i{font-style:italic;}
 .fs-o{font-style:oblique;}
-/*.fv{font-variant:;}*/
+@mixin fv($var){font-variant: $var;}
 .fv-n{font-variant:normal;}
 .fv-sc{font-variant:small-caps;}
 @mixin fz($size){font-size: $size;}
-/*.fza{font-size-adjust:;}*/
+@mixin fza($var){font-size-adjust: $var;}
 .fza-n{font-size-adjust:none;}
-/*.ff{font-family:;}
-.fef{font-effect:;}*/
+@mixin ff($var){font-family: $var;}
+@mixin fef($var){font-effect: $var;}
 .fef-n{font-effect:none;}
 .fef-eg{font-effect:engrave;}
 .fef-eb{font-effect:emboss;}
 .fef-o{font-effect:outline;}
-/*.fem{font-emphasize:;}
-.femp{font-emphasize-position:;}*/
+@mixin fem($var){font-emphasize: $var;}
+@mixin femp($var){font-emphasize-position: $var;}
 .femp-b{font-emphasize-position:before;}
 .femp-a{font-emphasize-position:after;}
-/*.fems{font-emphasize-style:;}*/
+@mixin fems($var){font-emphasize-style: $var;}
 .fems-n{font-emphasize-style:none;}
 .fems-ac{font-emphasize-style:accent;}
 .fems-dt{font-emphasize-style:dot;}
 .fems-c{font-emphasize-style:circle;}
 .fems-ds{font-emphasize-style:disc;}
-/*.fsm{font-smooth:;}*/
+@mixin fsm($var){font-smooth: $var;}
 .fsm-a{font-smooth:auto;}
 .fsm-n{font-smooth:never;}
 .fsm-aw{font-smooth:always;}
-/*.fst{font-stretch:;}*/
+@mixin fst($var){font-stretch: $var;}
 .fst-n{font-stretch:normal;}
 .fst-uc{font-stretch:ultra-condensed;}
 .fst-ec{font-stretch:extra-condensed;}
@@ -458,12 +453,12 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .fst-ee{font-stretch:extra-expanded;}
 .fst-ue{font-stretch:ultra-expanded;}
 @mixin op($var){opacity: $var;}
-/*.rz{resize:;}*/
+@mixin rz($var){resize: $var;}
 .rz-n{resize:none;}
 .rz-b{resize:both;}
 .rz-h{resize:horizontal;}
 .rz-v{resize:vertical;}
-/*.cur{cursor:;}*/
+@mixin cur($var){cursor: $var;}
 .cur-a{cursor:auto;}
 .cur-d{cursor:default;}
 .cur-c{cursor:crosshair;}
@@ -472,18 +467,18 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .cur-m{cursor:move;}
 .cur-p{cursor:pointer;}
 .cur-t{cursor:text;}
-/*.pgbb{page-break-before:;}*/
+@mixin pgbb($var){page-break-before: $var;}
 .pgbb-a{page-break-before:auto;}
 .pgbb-aw{page-break-before:always;}
 .pgbb-l{page-break-before:left;}
 .pgbb-r{page-break-before:right;}
-/*.pgbi{page-break-inside:;}*/
+@mixin pgbi($var){page-break-inside: $var;}
 .pgbi-a{page-break-inside:auto;}
 .pgbi-av{page-break-inside:avoid;}
-/*.pgba{page-break-after:;}*/
+@mixin pgba($var){page-break-after: $var;}
 .pgba-a{page-break-after:auto;}
 .pgba-aw{page-break-after:always;}
 .pgba-l{page-break-after:left;}
 .pgba-r{page-break-after:right;}
-/*.orp{orphans:;}
-.wid{widows:;}*/
+@mixin orp($var){orphans: $var;}
+@mixin wid($var){widows: $var;}
