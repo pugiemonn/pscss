@@ -205,21 +205,21 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 @mixin bdw($width){border-width: $width;}
 @mixin bdt($top){border-top: $top;}
 .bdt-n{border-top:none;}
-.bdt+{border-top: 1px solid #000;}
+.bdt_{border-top: 1px solid #000;}
 @mixin bdtw($var){border-top-width: $var;}
 @mixin bdts($var){border-top-style: $var;}
 .bdts-n{border-top-style:none;}
 .bdtc{border-top-color:#000;}
 @mixin bdr($var){border-right: $var;}
 .bdr-n{border-right:none;}
-.bdr+{border-right: 1px solid #000;}
+.bdr_{border-right: 1px solid #000;}
 @mixin bdrw($width){border-right-width: $width;}
 @mixin bdrs($style){border-right-style: $style;}
 .bdrs-n{border-right-style:none;}
 .bdrc{border-right-color:#000;}
 @mixin bdb($var){border-bottom: $var;}
 .bdb-n{border-bottom:none;}
-.bdb+{border-bottom: 1px solid #000;}
+.bdb_{border-bottom: 1px solid #000;}
 @mixin bdbw($var){border-bottom-width: $var;}
 @mixin bdbs($var){border-bottom-style: $var;}
 .bdbs-n{border-bottom-style:none;}
@@ -237,22 +237,22 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 @mixin bdtrrs($var){border-top-right-radius: $var;}
 @mixin bdtlrs($var){border-top-left-radius: $var;}
 @mixin bdbrrs($var){border-bottom-right-radius: $var;}
-@mixin bdblrs($var){border-bottom-left-radius:$var;}
+@mixin bdblrs($var){border-bottom-left-radius: $var;}
 @mixin bg($var){background: $var;}
 .bg-n{background:none;}
 @mixin bgc($color){background-color: $color;}
 .bgc-t{background-color:transparent;}
-@mixin bgi($var){background-image:$var;}
+@mixin bgi($var){background-image: $var;}
 .bgi-n{background-image:none;}
 @mixin bgr($var){background-repeat: $var;}
 .bgr-r{background-repeat:repeat;}
 .bgr-x{background-repeat:repeat-x;}
 .bgr-y{background-repeat:repeat-y;}
 .bgr-n{background-repeat:no-repeat;}
-@mixin bga($var){background-attachment:$var;}
+@mixin bga($var){background-attachment: $var;}
 .bga-f{background-attachment:fixed;}
 .bga-s{background-attachment:scroll;}
-.bgp{background-position:00;}
+.bgp{background-position:0 0;}
 @mixin bgpx($var){background-position-x: $var;}
 @mixin bgpy($var){background-position-y: $var;}
 @mixin bgbk($var){background-break: $var;}
@@ -422,7 +422,6 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 @mixin fz($size){font-size: $size;}
 @mixin fza($var){font-size-adjust: $var;}
 .fza-n{font-size-adjust:none;}
-@mixin ff($var){font-family: $var;}
 @mixin fef($var){font-effect: $var;}
 .fef-n{font-effect:none;}
 .fef-eg{font-effect:engrave;}
@@ -482,3 +481,9 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 .pgba-r{page-break-after:right;}
 @mixin orp($var){orphans: $var;}
 @mixin wid($var){widows: $var;}
+@mixin ff($var){font-family: $var;}
+.ff-s{font-family:Georgia,'Times New Roman',serif;}
+.ff-ss{font-family:Helvetica,Arial,sans-serif;}
+.ff-c{font-family:'Monotype Corsiva','Comic Sans MS',cursive;}
+.ff-f{font-family:Capitals,Impact,fantasy;}
+.ff-m{font-family:Monaco,'Courier New',monospace;}
