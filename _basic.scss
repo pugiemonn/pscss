@@ -1,9 +1,3 @@
-/*
-参考
-https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
-*/
-
-
 @mixin pos($var){position: $var;}
 .pos-s{position:static;}
 .pos-a{position:absolute;}

@@ -1,0 +1,11 @@
+@mixin wh($val) {
+  @include w($val);
+  @include h($val);
+} 
+
+@mixin fzhlh($val) {
+  @include fz($val);
+  @include h($val);
+  @include lh($val);
+}
+
