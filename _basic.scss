@@ -102,10 +102,10 @@ https://code.google.com/p/zen-coding/wiki/ZenCSSPropertiesEn
 @mixin ml($left){margin-left: $left;}
 .ml-a{margin-left:auto;}
 @mixin p($dist){padding: $dist;}
-.p-0{padding:0;}
-.p-2{padding:00;}
-.p-3{padding:000;}
-.p-4{padding:0000;}
+.p-0{padding: 0;}
+.p-2{padding: 0 0;}
+.p-3{padding: 0 0 0;}
+.p-4{padding: 0 0 0 0;}
 @mixin p2($top_and_bottom, $right_and_left){
   padding: $top_and_bottom $right_and_left;
 }
