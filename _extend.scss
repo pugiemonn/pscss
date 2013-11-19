@@ -1,11 +1,11 @@
 %d-ib {
-  display: inline-block;
+  @extend .d-ib;
   *display: inline;
   *zoom: 1;
 }
 
 %ellipsis {
-  white-space: nowrap;
+  @extend .whs-nw;
   @extend .ov-h;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis; /* Opera9,10対応 */
