@@ -247,6 +247,7 @@
 .bga-f{background-attachment:fixed;}
 .bga-s{background-attachment:scroll;}
 .bgp{background-position:0 0;}
+@mixin bgp($var){background-position: $var;}
 @mixin bgpx($var){background-position-x: $var;}
 @mixin bgpy($var){background-position-y: $var;}
 @mixin bgbk($var){background-break: $var;}
