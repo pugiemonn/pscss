@@ -1,11 +1,17 @@
-@mixin wh($val) {
-  @include w($val);
-  @include h($val);
-} 
+@mixin bdrs-all($radius) {
+  @include bdrs($radius);
+  @include bdrs-m($radius);
+  @include bdrs-w($radius);
+}
 
 @mixin fzhlh($val) {
   @include fz($val);
   @include h($val);
   @include lh($val);
+}
+
+@mixin wh($val) {
+  @include w($val);
+  @include h($val);
 }
 
