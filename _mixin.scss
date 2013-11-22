@@ -10,6 +10,16 @@
   @include lh($val);
 }
 
+@mixin hlh($val) {
+  @include h($val);
+  @include lh($val);
+}
+
+@mixin mp($val) {
+  @include m($val);
+  @include p($val);
+}
+
 @mixin wh($val) {
   @include w($val);
   @include h($val);
