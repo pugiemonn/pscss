@@ -1,3 +1,7 @@
+/*
+_mixin.scss of https://github.com/pugiemonn/pscss
+*/
+
 @mixin bdrs-all($radius) {
   @include bdrs($radius);
   @include bdrs-m($radius);
